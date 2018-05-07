@@ -1,0 +1,22 @@
+nav {
+  margin: 0 auto;
+  background-color: rgb(206, 158, 55);
+  height: 50px;
+}
+ul {
+  margin: 0 auto;
+  padding-left: 0;
+}
+li {
+  display: inline;
+}
+
+a {
+  display: inline-block;
+  padding: 16px;
+
+  text-decoration: none;
+}
+.active {
+  background-color: rgb(126, 224, 68);
+}

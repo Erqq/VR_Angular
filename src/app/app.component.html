@@ -5,4 +5,21 @@
     <option *ngFor="let stat of stations" value={{stat.stationName}}>
 
   </datalist>
+  <nav>
+
+    <ul>
+
+      <li>
+        <a routerLink="/arrivals" routerLinkActive="active">Saapuvat</a>
+      </li>
+      <li>
+        <a routerLink="/departures" routerLinkActive="active">Lähtevät</a>
+      </li>
+    </ul>
+
+
+  </nav>
+  <div>
+    <router-outlet></router-outlet>
+  </div>
 </div>
