@@ -8,32 +8,19 @@ export class TrainsService {
     this.http = http;
   }
 
-  fetchArrival(short, e) {
+  fetchArrival(e) {
     let data: any;
-    this.http
-      .get(
-        'https://rata.digitraffic.fi/api/v1/live-trains/station/' +
-          short +
-          '?arrived_trains=0&arriving_trains=20&departed_trains=0&departing_trains=0&include_nonstopping=false'
-      )
-      .subscribe(jsonObject => {
-        data = jsonObject;
-        e(jsonObject);
-      });
+    this.http.get('https://swapi.co/api/planets/').subscribe(jsonObject => {
+      data = jsonObject;
+      e(jsonObject);
+    });
   }
-  fetchDeparture(short, e) {
+  fetchDeparture(e) {
     let data: any;
-    this.http
-      .get(
-        'https://rata.digitraffic.fi/api/v1/live-trains/station/' +
-          short +
-          '?arrived_trains=0&arriving_trains=0&departed_trains=20&departing_trains=0&include_nonstopping=false'
-      )
-      .subscribe(jsonObject => {
-        data = jsonObject;
-
-        e(jsonObject);
-      });
+    this.http.get('https://swapi.co/api/planets/').subscribe(jsonObject => {
+      data = jsonObject;
+      e(jsonObject);
+    });
   }
   fetchStations(e) {
     let data: any;
