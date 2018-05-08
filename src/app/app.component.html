@@ -1,8 +1,8 @@
 <!--The content below is only a placeholder and can be replaced.-->
 <div style="text-align:center">
-  <input list="stations">
+  <input list="stations" placeholder="Asema" [(ngModel)]="station">
   <datalist id="stations">
-    <option *ngFor="let stat of stations" value={{stat.stationName}}>
+    <option *ngFor="let stat of stations" value={{stat.stationName}} id={{stat.stationShortCode}}>
 
   </datalist>
   <nav>
@@ -19,6 +19,7 @@
 
 
   </nav>
+
   <div>
     <router-outlet></router-outlet>
   </div>
