@@ -1,15 +1,15 @@
-import { Component, OnInit, DoCheck } from "@angular/core";
-import { TrainsService } from "./trains.service";
-import { DataService } from "./data.service";
+import { Component, OnInit, DoCheck } from '@angular/core';
+import { TrainsService } from './trains.service';
+import { DataService } from './data.service';
 @Component({
-  selector: "app-root",
-  templateUrl: "./app.component.html",
-  styleUrls: ["./app.component.css"]
+  selector: 'app-root',
+  templateUrl: './app.component.html',
+  styleUrls: ['./app.component.css']
 })
 export class AppComponent implements OnInit, DoCheck {
-  title = "app";
+  title = 'app';
   stations: any[] = [];
-  station = "";
+  station = '';
   constructor(
     private trainsService: TrainsService,
     private dataService: DataService

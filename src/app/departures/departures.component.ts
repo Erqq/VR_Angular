@@ -7,7 +7,7 @@ import { TrainsService } from "../trains.service";
 @Component({
   selector: "app-departures",
   templateUrl: "./departures.component.html",
-  styleUrls: ['./departures.component.css']
+  styleUrls: ["./departures.component.css"]
 })
 export class DeparturesComponent implements OnInit, DoCheck {
   station: string;
@@ -56,6 +56,9 @@ export class DeparturesComponent implements OnInit, DoCheck {
           return false;
         }
         if (train.trainCategory === 'Locomotive') {
+          return false;
+        }
+        if (train.trainCategory === 'On-track machines') {
           return false;
         }
         return true;

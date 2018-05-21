@@ -14,7 +14,7 @@ export class TrainsService {
       .get(
         'https://rata.digitraffic.fi/api/v1/live-trains/station/' +
           short +
-          '?arrived_trains=0&arriving_trains=20&departed_trains=0&departing_trains=0&include_nonstopping=false'
+          '?arrived_trains=0&arriving_trains=8&departed_trains=0&departing_trains=0&include_nonstopping=false'
       )
       .subscribe(jsonObject => {
         data = jsonObject;
@@ -27,7 +27,7 @@ export class TrainsService {
       .get(
         'https://rata.digitraffic.fi/api/v1/live-trains/station/' +
           short +
-          '?arrived_trains=0&arriving_trains=0&departed_trains=0&departing_trains=20&include_nonstopping=false'
+          '?arrived_trains=0&arriving_trains=0&departed_trains=0&departing_trains=8&include_nonstopping=false'
       )
       .subscribe(jsonObject => {
         data = jsonObject;

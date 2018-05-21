@@ -23,3 +23,7 @@ a {
 body {
   background-color: lightgray;
 }
+
+agm-map {
+  height: 400px;
+}

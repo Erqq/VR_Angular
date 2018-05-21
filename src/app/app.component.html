@@ -5,22 +5,29 @@
     <option *ngFor="let stat of stations" value={{stat.stationName}} id={{stat.stationShortCode}}>
 
   </datalist>
-  <nav>
-
-    <ul>
-
-      <li>
-        <a routerLink="/arrivals" routerLinkActive="active">Saapuvat</a>
-      </li>
-      <li>
-        <a routerLink="/departures" routerLinkActive="active">Lähtevät</a>
-      </li>
-    </ul>
-
-
-  </nav>
-
   <div>
-    <router-outlet></router-outlet>
+    <nav>
+
+      <ul>
+
+        <li>
+          <a routerLink="/arrivals" routerLinkActive="active">Saapuvat</a>
+        </li>
+        <li>
+          <a routerLink="/departures" routerLinkActive="active">Lähtevät</a>
+        </li>
+      </ul>
+
+
+    </nav>
+    <agm-map [latitude]="lat" [longitude]="lng">
+      <agm-marker [latitude]="lat" [longitude]="lng"></agm-marker>
+    </agm-map>
+    <div class="container">
+      <router-outlet></router-outlet>
+    </div>
   </div>
+
+
+
 </div>
