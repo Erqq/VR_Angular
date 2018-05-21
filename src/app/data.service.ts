@@ -6,4 +6,5 @@ import { log } from 'util';
 export class DataService {
   station: string;
   stationShortCode: string;
+  stations: any[] = [];
 }

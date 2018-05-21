@@ -1,5 +1,19 @@
 <p>
   {{station}} {{stationShortCode}}</p>
-<div *ngFor="let train of trains; let i = index">
-  <div>{{train.trainType}} {{train.trainNumber}}</div>
-</div>
+<table class="container">
+  <tr class="row">
+    <th class="col">Juna</th>
+    <th class="col">Lähtöasema</th>
+    <th class="col">Lähtee</th>
+    <th class="col">Pääteasema</th>
+
+  </tr>
+  <tr class="container" *ngFor="let train of trains | sortTime:'DEPARTURE':stationShortCode; let i = index">
+    <td class="col">{{train.trainType}}({{train.trainNumber}})</td>
+    <ng-container *ngFor="let row of train.timeTableRows;let j = index">
+      <td class="col" *ngIf="j==0">{{getStationName(row.stationShortCode)}}</td>
+      <td class="col" *ngIf="j==train.timeTableRows.length-1">{{ getStationName(row.stationShortCode)}}</td>
+      <td class="col" *ngIf="row.stationShortCode==stationShortCode && row.type=='DEPARTURE'">{{getLocalTime(row.scheduledTime)}} ({{row.stationShortCode}})</td>
+    </ng-container>
+  </tr>
+</table>
