@@ -12,9 +12,7 @@
     <td class="col">{{train.trainType}} {{train.trainNumber}}</td>
     <ng-container *ngFor="let row of train.timeTableRows;let j = index">
       <td class="col" *ngIf="j==0">{{getStationName(row.stationShortCode)}}</td>
-
       <td class="col" *ngIf="row.stationShortCode==stationShortCode && row.type=='ARRIVAL'">{{getLocalTime(row.scheduledTime)}} ({{row.stationShortCode}})</td>
-
       <td class="col" *ngIf="j==train.timeTableRows.length-1">{{ getStationName(row.stationShortCode)}}</td>
     </ng-container>
   </tr>

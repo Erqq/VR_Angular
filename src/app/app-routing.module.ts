@@ -2,11 +2,13 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { ArrivalsComponent } from './arrivals/arrivals.component';
 import { DeparturesComponent } from './departures/departures.component';
-
+/**
+ * Routes for the departing and arriving trains.
+ */
 const appRoutes: Routes = [
-  { path: 'arrivals', component: ArrivalsComponent },
-  { path: 'departures', component: DeparturesComponent },
-  { path: '', redirectTo: '/arrivals', pathMatch: 'full' }
+  { path: 'arrival', component: ArrivalsComponent },
+  { path: 'departure', component: DeparturesComponent },
+  { path: '', redirectTo: '/departure', pathMatch: 'full' }
   // { path: '**', component: NotFoundComponent }
 ];
 

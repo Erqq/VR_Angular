@@ -1,12 +1,10 @@
-<p>
-  {{station}} </p>
+<p>{{station}} </p>
 <table class="container">
   <tr class="row">
     <th class="col">Juna</th>
     <th class="col">Lähtöasema</th>
     <th class="col">Lähtee</th>
     <th class="col">Pääteasema</th>
-
   </tr>
   <tr class="container" *ngFor="let train of trains | sortTime:'DEPARTURE':stationShortCode; let i = index">
     <td class="col">{{train.trainType}}({{train.trainNumber}})</td>

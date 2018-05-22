@@ -10,7 +10,6 @@ import { FormsModule } from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
 import { DataService } from './data.service';
 import { SortTime } from './app.sortTime';
-
 import { AgmCoreModule } from '@agm/core';
 
 @NgModule({

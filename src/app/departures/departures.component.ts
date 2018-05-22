@@ -18,15 +18,17 @@ export class DeparturesComponent implements OnInit, DoCheck {
   options = {
     minute: '2-digit',
     hour: '2-digit',
-
     month: 'numeric',
     day: 'numeric'
   };
   constructor(
-    private activatedRoute: ActivatedRoute,
     private dataService: DataService,
     private trainsService: TrainsService
   ) {}
+
+  /**
+   * Updates data.
+   */
   ngDoCheck() {
     if (this.station !== this.dataService.station) {
       this.stationShortCode = this.dataService.stationShortCode;
@@ -34,7 +36,14 @@ export class DeparturesComponent implements OnInit, DoCheck {
       this.getTrains();
     }
   }
+
   ngOnInit() {}
+
+  /**
+   * Returns the station name.
+   *
+   * @param shortCode station short code
+   */
   getStationName(shortCode) {
     let name;
     for (let i = 0; i < this.dataService.stations.length; i++) {
@@ -45,10 +54,20 @@ export class DeparturesComponent implements OnInit, DoCheck {
     }
     return name;
   }
+
+  /**
+   * Changes the time to local time
+   *
+   * @param time time when the train is on the selected station
+   */
   getLocalTime(time) {
     const newTime = new Date(time);
     return newTime.toLocaleDateString('eng-Fi', this.options);
   }
+
+  /**
+   *  Gets the departuring trains.
+   */
   getTrains() {
     this.trainsService.fetchDeparture(this.stationShortCode, result => {
       this.trains = result.filter(train => {

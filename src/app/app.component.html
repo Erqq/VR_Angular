@@ -1,33 +1,31 @@
 <!--The content below is only a placeholder and can be replaced.-->
 <div style="text-align:center">
+
   <input list="stations" placeholder="Asema" [(ngModel)]="station">
   <datalist id="stations">
     <option *ngFor="let stat of stations" value={{stat.stationName}} id={{stat.stationShortCode}}>
-
   </datalist>
+
   <div>
     <nav>
-
       <ul>
+        <li>
+          <a routerLink="/departure" routerLinkActive="active">Lähtevät</a>
+        </li>
 
         <li>
-          <a routerLink="/arrivals" routerLinkActive="active">Saapuvat</a>
-        </li>
-        <li>
-          <a routerLink="/departures" routerLinkActive="active">Lähtevät</a>
+          <a routerLink="/arrival" routerLinkActive="active">Saapuvat</a>
         </li>
       </ul>
-
-
     </nav>
-    <agm-map [latitude]="lat" [longitude]="lng">
-      <agm-marker [latitude]="lat" [longitude]="lng"></agm-marker>
+    <agm-map [latitude]="64.8929581" [longitude]="26.0218001" [zoom]="5">
+      <agm-marker *ngFor="let train of movingTrains;" [latitude]="train.location.coordinates[1]" [longitude]="train.location.coordinates[0]">
+      </agm-marker>
     </agm-map>
-    <div class="container">
+    <div class="container ">
       <router-outlet></router-outlet>
     </div>
   </div>
-
 
 
 </div>

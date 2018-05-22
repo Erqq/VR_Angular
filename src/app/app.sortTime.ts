@@ -2,6 +2,9 @@ import { Pipe, PipeTransform } from '@angular/core';
 @Pipe({
   name: 'sortTime'
 })
+/**
+ * Pipe for sorting schedule times so they apear in the right order.
+ */
 export class SortTime implements PipeTransform {
   transform(value, type, shortCode) {
     let a;
